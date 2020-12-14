@@ -1,9 +1,6 @@
-var previewsection = document.getElementById("carmodelspreview");
-var array = []
-var doc
-var imagecol = document.createElement("div")
-var allimages
+
 var loadcommentsbutton = document.getElementById("loadcomments");
+
 loadcommentsbutton.addEventListener("click", function () {
     loadmore();
     loadcommentsbutton.remove();
@@ -12,7 +9,12 @@ loadcommentsbutton.addEventListener("click", function () {
 
 
 function loadmore() {
-    axios.get('imageslinks.html')
+    var previewsection = document.getElementById("carmodelspreview");
+    var array = []
+    var doc
+    var imagecol = document.createElement("div")
+    var allimages
+    axios.get('siteresources/imageslinks.html')
         .then(function (response) {
             doc = new DOMParser().parseFromString(response.data, 'text/html');
             allimages = doc.body.querySelector("div[class=images]")
@@ -34,8 +36,6 @@ function loadmore() {
                 var image = array[i]
                 var imagecolcopy = imagecol.cloneNode(true);
                 var card = imagecolcopy.querySelector("div[class=card]");
-                //console.log(i%3)
-                
                 if(i%3==0){
                     //console.log(i)
                     copypreview=previewsection.cloneNode(true);
