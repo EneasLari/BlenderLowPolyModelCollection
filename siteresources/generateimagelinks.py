@@ -15,7 +15,7 @@ def setFileNamesToPath(stringtoputpath):
         for file_name in files:
             if ".png" in file_name:
                 message = stringtoputpath
-                messageformated = message.format(file_name)
+                messageformated = message.format(file_name,file_name)
                 innerhtml = innerhtml + messageformated
     return innerhtml
 
@@ -27,7 +27,7 @@ def replaceInnerHtml():
         soup = BeautifulSoup(html_file.read(), features="html.parser")
         # Go through each tag and replace text with '-'
         for tag in soup.find_all("div", {"class": "images"}):
-            innher = setFileNamesToPath("""<img class="card-img-top modalSource" src="siteresources/img/moreipreviewmages/{}" alt="Card image cap">""")
+            innher = setFileNamesToPath("""<img class="card-img-top modalSource" src="siteresources/img/moreipreviewmages/{}" alt="{}">""")
             for i in tag.contents:
                 # print(i)
                 i.replace_with("")
