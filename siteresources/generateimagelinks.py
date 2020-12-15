@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 def setFileNamesToPath(stringtoputpath):
     currentpythonfilepath=os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
     __location__=os.path.join(currentpythonfilepath,"img")
-    __location__=os.path.join(__location__,"moreipreviewmages")
+    __location__=os.path.join(__location__,"morepreviewimages")
     soup = BeautifulSoup()
     innerhtml = ""
     for dirpath, dirnames, files in os.walk(__location__):
@@ -27,7 +27,7 @@ def replaceInnerHtml():
         soup = BeautifulSoup(html_file.read(), features="html.parser")
         # Go through each tag and replace text with '-'
         for tag in soup.find_all("div", {"class": "images"}):
-            innher = setFileNamesToPath("""<img class="card-img-top modalSource" src="siteresources/img/moreipreviewmages/{}" alt="{}">""")
+            innher = setFileNamesToPath("""<img class="card-img-top modalSource" src="siteresources/img/morepreviewimages/{}" alt="{}">""")
             for i in tag.contents:
                 # print(i)
                 i.replace_with("")
