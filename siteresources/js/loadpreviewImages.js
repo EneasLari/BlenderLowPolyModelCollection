@@ -1,9 +1,9 @@
 
-var loadcommentsbutton = document.getElementById("loadcomments");
+var moreimages = document.getElementById("loadmoreimages");
 
-loadcommentsbutton.addEventListener("click", function () {
+moreimages.addEventListener("click", function () {
     loadmore();
-    loadcommentsbutton.remove();
+    moreimages.remove();
 })
 
 
@@ -36,7 +36,7 @@ function loadmore() {
                 var image = array[i]
                 var imagecolcopy = imagecol.cloneNode(true);
                 var card = imagecolcopy.querySelector("div[class=card]");
-                if(i%3==0){
+                if(i%2==0){
                     //console.log(i)
                     copypreview=previewsection.cloneNode(true);
                     copypreview.innerHTML=null

@@ -2,11 +2,11 @@
 .modalSource {
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .modalSource:hover {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 /* The Modal (background) */
@@ -37,7 +37,7 @@
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
 }
 
